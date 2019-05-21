@@ -189,13 +189,13 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-add_executable(demo_mission
-        src/demo_mission.cpp)
-target_link_libraries(demo_mission
-        ${catkin_LIBRARIES}
-        ${DJIOSDK_LIBRARIES}
-        )
-add_dependencies(demo_mission dji_sdk_generate_messages_cpp)
+# add_executable(demo_mission
+#         src/demo_mission.cpp)
+# target_link_libraries(demo_mission
+#         ${catkin_LIBRARIES}
+#         ${DJIOSDK_LIBRARIES}
+#         )
+# add_dependencies(demo_mission dji_sdk_generate_messages_cpp)
 
 # add_executable(demo_camera_gimbal
 #         src/demo_camera_gimbal.cpp )
@@ -213,14 +213,14 @@ add_dependencies(demo_mission dji_sdk_generate_messages_cpp)
 #         )
 # add_dependencies(demo_mfio dji_sdk_generate_messages_cpp)
 
-add_executable(demo_flight_control
-        src/demo_flight_control.cpp)
+# add_executable(demo_flight_control
+#         src/demo_flight_control.cpp)
 
-target_link_libraries(demo_flight_control
-        ${catkin_LIBRARIES}
-        ${DJIOSDK_LIBRARIES}
-        )
-add_dependencies(demo_flight_control dji_sdk_generate_messages_cpp)
+# target_link_libraries(demo_flight_control
+#         ${catkin_LIBRARIES}
+#         ${DJIOSDK_LIBRARIES}
+#         )
+# add_dependencies(demo_flight_control dji_sdk_generate_messages_cpp)
 
 add_executable(data
         src/data.cpp)
@@ -240,13 +240,13 @@ add_dependencies(data dji_sdk_generate_messages_cpp)
 #         )
 # add_dependencies(demo_mobile_comm dji_sdk_generate_messages_cpp)
 
-add_executable(demo_local_position_control
-        src/demo_local_position_control.cpp)
-target_link_libraries(demo_local_position_control
-        ${catkin_LIBRARIES}
-        ${DJIOSDK_LIBRARIES}
-        )
-add_dependencies(demo_local_position_control dji_sdk_generate_messages_cpp)
+# add_executable(demo_local_position_control
+#         src/demo_local_position_control.cpp)
+# target_link_libraries(demo_local_position_control
+#         ${catkin_LIBRARIES}
+#         ${DJIOSDK_LIBRARIES}
+#         )
+# add_dependencies(demo_local_position_control dji_sdk_generate_messages_cpp)
 
 
 if (OPEN_CV_3_3_0_INSTALLED AND FOUND_OPENCV_VIZ AND FOUND_ADVANCED_SENSING)
@@ -258,29 +258,29 @@ if (OPEN_CV_3_3_0_INSTALLED AND FOUND_OPENCV_VIZ AND FOUND_ADVANCED_SENSING)
             src/stereo_utility/config.cpp
             src/stereo_utility/point_cloud_viewer.cpp)
 
-    add_executable(demo_stereo_depth_perception
-            src/demo_stereo_depth_perception.cpp
-            ${STEREO_UTILITY_SRC_FILE} )
-    target_link_libraries(demo_stereo_depth_perception
-            ${catkin_LIBRARIES}
-            ${DJIOSDK_LIBRARIES}
-            ${OpenCV_LIBS}
-            )
-    add_dependencies(demo_stereo_depth_perception dji_sdk_generate_messages_cpp)
+    # add_executable(demo_stereo_depth_perception
+    #         src/demo_stereo_depth_perception.cpp
+    #         ${STEREO_UTILITY_SRC_FILE} )
+    # target_link_libraries(demo_stereo_depth_perception
+    #         ${catkin_LIBRARIES}
+    #         ${DJIOSDK_LIBRARIES}
+    #         ${OpenCV_LIBS}
+    #         )
+    # add_dependencies(demo_stereo_depth_perception dji_sdk_generate_messages_cpp)
 endif()
 
 if (OPEN_CV_3_3_0_INSTALLED AND FOUND_OPENCV_VIZ AND darknet_ros_FOUND AND FOUND_ADVANCED_SENSING)
     message(STATUS "Found OpenCV ${OpenCV_VERSION}, Viz3d, darknet_ros, and advanced sensing module, depth percpetion demo will be compiled")
 
-    add_executable(demo_stereo_object_depth_perception
-            src/demo_stereo_object_depth_perception.cpp
-            ${STEREO_UTILITY_SRC_FILE} )
-    target_link_libraries(demo_stereo_object_depth_perception
-            ${catkin_LIBRARIES}
-            ${DJIOSDK_LIBRARIES}
-            ${OpenCV_LIBS}
-            )
-    add_dependencies(demo_stereo_object_depth_perception dji_sdk_generate_messages_cpp)
+    # add_executable(demo_stereo_object_depth_perception
+    #         src/demo_stereo_object_depth_perception.cpp
+    #         ${STEREO_UTILITY_SRC_FILE} )
+    # target_link_libraries(demo_stereo_object_depth_perception
+    #         ${catkin_LIBRARIES}
+    #         ${DJIOSDK_LIBRARIES}
+    #         ${OpenCV_LIBS}
+    #         )
+    # add_dependencies(demo_stereo_object_depth_perception dji_sdk_generate_messages_cpp)
 endif()
 
 #############
