@@ -56,11 +56,11 @@ int main(int argc, char** argv)
   query_version_service      = nh.serviceClient<dji_sdk::QueryDroneVersion>("dji_sdk/query_drone_version");
   set_local_pos_reference    = nh.serviceClient<dji_sdk::SetLocalPosRef> ("dji_sdk/set_local_pos_ref");
 
-  if (!set_local_position()) // We need this for height
+/*  if (!set_local_position()) // We need this for height
   {
     ROS_ERROR("GPS health insufficient - No local frame reference for height. Exiting.");
     return 1;
-  }
+  }*/
 
   ros::spin();
   return 0;
