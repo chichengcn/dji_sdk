@@ -197,21 +197,21 @@ target_link_libraries(demo_mission
         )
 add_dependencies(demo_mission dji_sdk_generate_messages_cpp)
 
-add_executable(demo_camera_gimbal
-        src/demo_camera_gimbal.cpp )
-target_link_libraries(demo_camera_gimbal
-        ${catkin_LIBRARIES}
-        ${DJIOSDK_LIBRARIES}
-        )
-add_dependencies(demo_camera_gimbal dji_sdk_generate_messages_cpp)
+# add_executable(demo_camera_gimbal
+#         src/demo_camera_gimbal.cpp )
+# target_link_libraries(demo_camera_gimbal
+#         ${catkin_LIBRARIES}
+#         ${DJIOSDK_LIBRARIES}
+#         )
+# add_dependencies(demo_camera_gimbal dji_sdk_generate_messages_cpp)
 
-add_executable(demo_mfio
-        src/demo_mfio.cpp)
-target_link_libraries(demo_mfio
-        ${catkin_LIBRARIES}
-        ${DJIOSDK_LIBRARIES}
-        )
-add_dependencies(demo_mfio dji_sdk_generate_messages_cpp)
+# add_executable(demo_mfio
+#         src/demo_mfio.cpp)
+# target_link_libraries(demo_mfio
+#         ${catkin_LIBRARIES}
+#         ${DJIOSDK_LIBRARIES}
+#         )
+# add_dependencies(demo_mfio dji_sdk_generate_messages_cpp)
 
 add_executable(demo_flight_control
         src/demo_flight_control.cpp)
@@ -231,14 +231,14 @@ target_link_libraries(data
         )
 add_dependencies(data dji_sdk_generate_messages_cpp)
 
-add_executable(demo_mobile_comm
-        src/demo_mobile_comm.cpp)
+# add_executable(demo_mobile_comm
+#         src/demo_mobile_comm.cpp)
 
-target_link_libraries(demo_mobile_comm
-        ${catkin_LIBRARIES}
-        ${DJIOSDK_LIBRARIES}
-        )
-add_dependencies(demo_mobile_comm dji_sdk_generate_messages_cpp)
+# target_link_libraries(demo_mobile_comm
+#         ${catkin_LIBRARIES}
+#         ${DJIOSDK_LIBRARIES}
+#         )
+# add_dependencies(demo_mobile_comm dji_sdk_generate_messages_cpp)
 
 add_executable(demo_local_position_control
         src/demo_local_position_control.cpp)

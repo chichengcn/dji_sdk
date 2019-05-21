@@ -66,17 +66,26 @@ int main(int argc, char** argv)
   return 0;
 }
 
+geometry_msgs::Vector3 toEulerAngle(geometry_msgs::Quaternion quat)
+{
+  geometry_msgs::Vector3 ans;
+
+  tf::Matrix3x3 R_FLU2ENU(tf::Quaternion(quat.x, quat.y, quat.z, quat.w));
+  R_FLU2ENU.getRPY(ans.x, ans.y, ans.z);
+  return ans;
+}
 
 void attitude_callback(const geometry_msgs::QuaternionStamped::ConstPtr& msg)
 {
   current_atti = msg->quaternion;
-  ROS_INFO("##### attitude_callback: %.2f, %.2f, %.2f, %.2f", current_atti.x, current_atti.y, current_atti.z, current_atti.w);
+
+  ROS_INFO("##### attitude_callback: %.2f, %.2f, %.2f, %.2f", toEulerAngle(current_atti).x, toEulerAngle(current_atti).y, toEulerAngle(current_atti).z);
 }
 
 void local_position_callback(const geometry_msgs::PointStamped::ConstPtr& msg)
 {
   current_local_pos = msg->point;
-  ROS_INFO("##### local_position_callback: %.2f, %.2f, %.2f", current_local_pos.x, current_local_pos.y, current_local_pos.z);
+//  ROS_INFO("##### local_position_callback: %.2f, %.2f, %.2f", current_local_pos.x, current_local_pos.y, current_local_pos.z);
 }
 
 void gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg)
@@ -84,8 +93,6 @@ void gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg)
   static ros::Time start_time = ros::Time::now();
   ros::Duration elapsed_time = ros::Time::now() - start_time;
   current_gps = *msg;
-
-  ROS_INFO("##### local_position_callback: %.2f, %.2f, %.2f", current_local_pos.x, current_local_pos.y, current_local_pos.z);
 }
 
 void flight_status_callback(const std_msgs::UInt8::ConstPtr& msg)
