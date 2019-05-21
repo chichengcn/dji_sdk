@@ -79,7 +79,7 @@ void attitude_callback(const geometry_msgs::QuaternionStamped::ConstPtr& msg)
 {
   current_atti = msg->quaternion;
 
-  ROS_INFO("##### attitude_callback: %.2f, %.2f, %.2f, %.2f", toEulerAngle(current_atti).x, toEulerAngle(current_atti).y, toEulerAngle(current_atti).z);
+  ROS_INFO("##### attitude_callback: %.2f, %.2f, %.2f", toEulerAngle(current_atti).x, toEulerAngle(current_atti).y, toEulerAngle(current_atti).z);
 }
 
 void local_position_callback(const geometry_msgs::PointStamped::ConstPtr& msg)
