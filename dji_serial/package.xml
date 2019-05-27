@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>serial_example</name>
+  <name>dji_serial</name>
   <version>0.0.0</version>
   <description>Example package for using http://wjwwood.io/serial/ library</description>
 
