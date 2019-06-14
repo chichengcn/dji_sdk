@@ -1,0 +1,13 @@
+<launch>   
+
+    <node pkg="com_ground" type="trajectory" name="trajectory"/>
+
+    <node pkg="com_ground" type="serial_node" name="serial_node"/>
+
+    <node pkg="com_xbee" type="xbee" name="xbee"/>
+
+    <node pkg="dji_sdk_demo" type="demo_flight_control" name="demo_flight_control"/>
+
+    <node pkg="dji_sdk_demo" type="data" name="data"/>
+
+</launch>
